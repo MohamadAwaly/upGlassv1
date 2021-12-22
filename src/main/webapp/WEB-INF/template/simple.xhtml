@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title><ui:insert name="title">#{bundle['application.defaultpage.title']}</ui:insert></title>
+    <link href="#{request.contextPath}/css/simple.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+    <div id="container">
+        <div id="header">
+            <ui:insert name="header">
+                <h1>#{bundle['application.defaultpage.header.content']}</h1>
+                <ui:include src="header.xhtml"/>
+            </ui:insert>
+        </div>
+<!--    <div id="layoutSidenav">-->
+<!--        <div id="layoutSidenav_nav">-->
+
+<!--        </div>-->
+<!--    </div>-->
+        <div id="content">
+            <ui:insert name="content">
+                <ui:include src="content.xhtml"/>
+                #{bundle['application.defaultpage.body.content']}
+            </ui:insert>
+        </div>
+        <div id="footer">
+            <ui:insert name="footer">
+                <ui:include src="footer.xhtml"/>
+                #{bundle['application.defaultpage.footer.content']}
+            </ui:insert>
+        </div>
+    </div>
+</h:body>
+</html>
